@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-generators'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
