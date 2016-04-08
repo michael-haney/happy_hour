@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'listings#index'
+  root 'static_pages#home'
 
   get 'home' => 'static_pages#home'
 
@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
 
   get 'contact' => 'static_pages#contact'
+
+  get 'listings/index'
   resources :listings
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
