@@ -11,7 +11,16 @@ Rails.application.routes.draw do
 
   get 'contact' => 'static_pages#contact'
 
+  get 'static_pages/register'
+
+  get 'static_pages/root'
+
   get 'listings/index'
+
+  resources :users,
+    only: [:new, :create],
+    path_names: { new: "signup"}
+
   resources :listings
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
