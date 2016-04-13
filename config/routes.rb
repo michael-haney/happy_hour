@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'users#new'
+  resources :users,
+    only: [:new, :create],
+    path_names: { new: 'Signup'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
