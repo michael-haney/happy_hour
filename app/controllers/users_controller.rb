@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      session[:id] = @user.id
       redirect_to root_path,
         notice: "Thank you for signing up #{@user.first_name.capitalize}"
     else

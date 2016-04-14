@@ -17,6 +17,11 @@ Rails.application.routes.draw do
 
   get 'listings/index'
 
+  get 'login' => 'sessions#login'
+  post 'login' => 'sessions#create'
+  delete '/logout',
+    to: 'sessions#destroy'
+
   resources :users,
     only: [:new, :create],
     path_names: { new: "signup"}
