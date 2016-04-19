@@ -26,13 +26,14 @@
       <% end %>
     <% end %>
 
-    <div class="navbar navbar-fixed-bottom row fluid">
-    </div>
-  </div>
+    <% if current_user.present? %>
+      <%= render 'post_navbar' %>
+    <% else %>
+      <%= render 'pre_navbar' %>
+    <% end %>
+
+    <% if current_page?(root_path) && !current_user.present? %>
+      <%= render 'login' %>
+    <% end %>
 </body>
-</html>
-
-
-<%= render 'layouts/authentication' %>
-<%= yield %>
 
