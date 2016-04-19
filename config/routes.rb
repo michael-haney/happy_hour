@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+
   root 'static_pages#home'
+
+  get 'about' => 'logged_out#about'
+
+  get 'logged_out/about'
 
   get 'home' => 'static_pages#home'
 
@@ -16,6 +21,11 @@ Rails.application.routes.draw do
   get 'static_pages/root'
 
   get 'listings/index'
+
+  get 'users/logged_in_home'
+
+  get 'logged_in_home' => 'users/logged_in_home'
+
 
   get 'login' => 'sessions#login'
   post 'login' => 'sessions#create'
