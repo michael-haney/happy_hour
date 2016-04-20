@@ -1,0 +1,7 @@
+<% if current_user %>
+  Signed in as <%=current_user.email %>
+  <%= link_to 'Logout', logout_path, method: :delete %>
+  <% else %>
+<%= link_to 'create a new account', new_user_path %>
+<%= link_to 'login', login_path %>
+<% end %>
