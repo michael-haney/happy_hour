@@ -36,7 +36,9 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="#">Logout</a>
+              <% if current_user %>
+                <%= link_to 'Logout', logout_path, method: :delete %>
+              <% end %>
             </li>
           </ul>
           <form class="navbar-form navbar-right" role="search">
@@ -49,6 +51,7 @@
           </form>
         </div>
       </nav>
+      <div class="container-fluid">
       <div class="jumbotron">
         <h2>
           Happy Hour

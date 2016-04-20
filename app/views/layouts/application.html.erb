@@ -18,22 +18,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
-        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <%= msg %>
-      <% end %>
-    <% end %>
 
     <% if current_user.present? %>
       <%= render 'post_navbar' %>
     <% else %>
       <%= render 'pre_navbar' %>
     <% end %>
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <%= msg %>
+        <% end %>
+      <% end %>
 
     <% if current_page?(root_path) && !current_user.present? %>
       <%= render 'login' %>
     <% end %>
+
+      <% if current_page?(new_user_path) %>
+      <%= render 'register' %>
+        <% end %>
 </body>
+
 
