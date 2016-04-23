@@ -20,9 +20,9 @@
 <body>
 
 <% if current_user.present? %>
-  <%= render 'post_navbar' %>
+  <%= render 'layouts/post_navbar' %>
 <% else %>
-  <%= render 'pre_navbar' %>
+  <%= render 'layouts/pre_navbar' %>
 <% end %>
 <div class="container">
   <% flash.each do |name, msg| %>
