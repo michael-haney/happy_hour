@@ -1,8 +1,8 @@
 module ListingsHelper
-  def sortable(column, title=nil)
+  def sortable(column, title = nil)
     title ||= column.titleize
     direction = direction_for_column(column)
-    css_class = (column == sort_column) ? "current #{sort_direction}"
+    css_class = (column == sort_column) ? "current #{sort_direction}" : nil
     link_to(title,
       { sort: column, direction: direction }) +
       content_tag(:span, '', class: css_class)

@@ -5,9 +5,15 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.order(
-      sort_column + ' ' + sort_direction
-    )#.paginate(page: params[:page])
+    if params['Restaurant_name']
+      @listings = Listing.where(
+        ["Restaurant_name like ?", params[:restaurant_name] + '%']
+      ) #.paginate
+    else
+      @listings = Listing.order(
+        sort_column + ' ' + sort_direction
+      ) #.paginate(page: params[:page])
+    end
   end
 
   # GET /listings/1
@@ -65,20 +71,21 @@ class ListingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_listing
-      @listing = Listing.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_listing
+    @listing = Listing.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def listing_params
-      params.require(:listing).permit(:restaurant_name, :menu_item, :price, :hours, :location)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def listing_params
+    params.require(:listing).permit(:restaurant_name, :menu_item, :price, :hours, :location)
+  end
+
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
   def sort_column
-    Listing.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    Listing.column_names.include?(params[:sort]) ? params[:sort] : "restaurant_name"
   end
 end
