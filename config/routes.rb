@@ -1,19 +1,14 @@
 Rails.application.routes.draw do
+
   root 'static_pages#home'
 
   get 'home' => 'static_pages#home'
-
-  get 'static_pages/about'
-
-  get 'about' => 'static_pages#about'
 
   get 'static_pages/contact'
 
   get 'contact' => 'static_pages#contact'
 
   get 'static_pages/register'
-
-  get 'static_pages/root'
 
   get 'listings/index'
 
@@ -26,7 +21,11 @@ Rails.application.routes.draw do
     only: [:new, :create],
     path_names: { new: "signup"}
 
-  resources :listings
+  resources :listings do
+    get :autocomplete_listing_restaurant_name, :on => :collection
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

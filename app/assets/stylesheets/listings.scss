@@ -1,0 +1,13 @@
+@import 'bootstrap';
+
+th .asc {
+  @extend .glyphicon;
+  @extend .glyphicon-chevron-up;
+  float: right;
+}
+
+th .desc {
+  @extend .glyphicon;
+  @extend .glyphicon-chevron-down;
+  float: right;
+}
