@@ -1,1 +1,7 @@
+<% if current_page?(root_path) && !current_user.present? %>
+  <%= render 'login' %>
+<% end %>
 
+<% if current_page?(new_user_path) %>
+  <%= render 'register' %>
+<% end %>
