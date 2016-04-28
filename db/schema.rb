@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408014823) do
+ActiveRecord::Schema.define(version: 20160428004145) do
+
+  create_table "explores", force: :cascade do |t|
+    t.string   "restaurant_name"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "food_type"
+    t.string   "deals"
+    t.string   "hours"
+    t.string   "location"
+    t.string   "address"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "listings", force: :cascade do |t|
     t.string   "restaurant_name"
@@ -19,6 +32,18 @@ ActiveRecord::Schema.define(version: 20160408014823) do
     t.string   "price"
     t.string   "hours"
     t.string   "location"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "restaurant_name"
+    t.string   "hours"
+    t.string   "deals"
+    t.string   "location"
+    t.string   "address"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
