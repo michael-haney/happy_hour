@@ -1,0 +1,43 @@
+<div class="page-header">
+  <%= link_to new_explore_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-glass"></span>
+    Happy Hour
+  <% end %>
+  <h1>Listing Happy Hours</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Restaurant name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Food Type</th>
+            <th>Deals</th>
+            <th>Hours</th>
+            <th>Location</th>
+            <th>Address</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @explores) do |explore| %>
+            <td><%= explore.restaurant_name %></td>
+            <td><%= explore.latitude %></td>
+            <td><%= explore.longitude %></td>
+            <td><%= explore.food_type %></td>
+            <td><%= explore.deals %></td>
+            <td><%= explore.hours %></td>
+            <td><%= explore.location %></td>
+            <td><%= explore.address %></td>
+            <td><%= link_to 'Show', explore %></td>
+        <td><%= link_to 'Edit', edit_explore_path(explore) %></td>
+        <td><%= link_to 'Destroy', explore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
