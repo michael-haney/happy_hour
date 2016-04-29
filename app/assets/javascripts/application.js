@@ -17,3 +17,5 @@
 //= require_tree .
 //= require jquery-ui/autocomplete
 //= require autocomplete-rails
+//= require underscore
+//= require gmaps/google

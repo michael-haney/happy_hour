@@ -5,6 +5,10 @@ class ExploresController < ApplicationController
   # GET /explores.json
   def index
     @explores = Explore.all
+    @hash = Gmaps4rails.build_markers(@explores) do |explores, marker|
+      marker.lat explores.latitude
+      marker.lng explores.longitude
+    end
   end
 
   # GET /explores/1
