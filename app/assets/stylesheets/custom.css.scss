@@ -389,7 +389,9 @@ Last change	: 2015/03/27
 }
 #thumbnail-preview-indicators .slides .slide-1,
 #thumbnail-preview-indicators .slides .slide-2,
-#thumbnail-preview-indicators .slides .slide-3 {
+#thumbnail-preview-indicators .slides .slide-3,
+#thumbnail-preview-indicators .slides .slide-4,
+#thumbnail-preview-indicators .slides .slide-5 {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -398,17 +400,25 @@ Last change	: 2015/03/27
 #thumbnail-preview-indicators .slides,
 #thumbnail-preview-indicators .slides .slide-1,
 #thumbnail-preview-indicators .slides .slide-2,
-#thumbnail-preview-indicators .slides .slide-3 {
+#thumbnail-preview-indicators .slides .slide-3,
+#thumbnail-preview-indicators .slides .slide-4,
+#thumbnail-preview-indicators .slides .slide-5 {
   height: 480px;
 }
 #thumbnail-preview-indicators .slides .slide-1 {
-  background-image: url(https://s3.amazonaws.com/ooomf-com-files/wdXqHcTwSTmLuKOGz92L_Landscape.jpg);
+  background-image: url(http://img2.10bestmedia.com/Images/Photos/290328/Union-Station-Exterior--by-Scott-Dressel-Martin_54_990x660.jpg);
 }
 #thumbnail-preview-indicators .slides .slide-2 {
-  background-image: url(https://s3.amazonaws.com/ooomf-com-files/tU3ptNgGSP6U2fE67Gvy_SYDNEY-162.jpg);
+  background-image: url(http://tours.tourfactory.com/tours/media/scene/big2/00/15/66/67/15666752.jpg);
 }
 #thumbnail-preview-indicators .slides .slide-3 {
-  background-image: url(https://s3.amazonaws.com/ooomf-com-files/mtNrf7oxS4uSxTzMBWfQ_DSC_0043.jpg);
+  background-image: url(http://www.parkburger.com/wp-content/uploads/2013/12/DSC_5894-e1445039833557.jpg);
+}
+#thumbnail-preview-indicators .slides .slide-4 {
+  background-image: url(http://media.bizj.us/view/img/2318121/comet-tavern4*750xx997-561-0-52.jpg);
+}
+#thumbnail-preview-indicators .slides .slide-5 {
+  background-image: url(http://blog.sandiego.org/wp-content/uploads/2014/01/guava-beach-bar-grill-broncos-640x360.jpg);
 }
 #thumbnail-preview-indicators .carousel-inner .item .carousel-caption {
   top: 20%;
