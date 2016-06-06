@@ -10,8 +10,6 @@
     <thead>
     <tr>
       <th><%= sortable('restaurant_name') %></th>
-      <th>Latitude</th>
-      <th>Longitude</th>
       <th><%= sortable('food_type') %></th>
       <th>Deals</th>
       <th>Hours</th>
@@ -26,8 +24,6 @@
     <tbody>
     <%= content_tag_for(:tr, @nearby) do |t| %>
       <td><%= t.restaurant_name %></td>
-      <td><%= t.latitude %></td>
-      <td><%= t.longitude %></td>
       <td><%= t.food_type %></td>
       <td><%= t.deals %></td>
       <td><%= t.hours %></td>
@@ -37,8 +33,10 @@
     </tbody>
   </table>
 </div>
+<div class="center-div">
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
 </div>
 <script type="text/javascript">
   handler = Gmaps.build('Google');

@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get 'explores/lohi'
   get 'explores/caphill'
   get 'explores/rino'
+  get 'explores/index'
   resources :explores
   root 'static_pages#home'
+
+  get 'index' => 'explores#index'
 
   get 'home' => 'static_pages#home'
 
@@ -29,6 +32,8 @@ Rails.application.routes.draw do
   get 'caphill' => 'explores#caphill'
 
   get 'lodo' => 'explores#lodo'
+
+  get 'password_request' => 'static_pages#password_request'
 
   get 'login' => 'sessions#login'
   post 'login' => 'sessions#create'
