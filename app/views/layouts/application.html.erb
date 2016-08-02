@@ -24,6 +24,13 @@
 <% else %>
   <%= render 'layouts/pre_navbar' %>
 <% end %>
+
+<% if current_user.present? && current_page?(root_path) %>
+  <%= render 'static_pages/carousel' %>
+<% else %>
+  <%= render 'layouts/jumbotron' %>
+<% end %>
+
 <div class="container">
   <% flash.each do |name, msg| %>
     <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
