@@ -6,6 +6,10 @@ gem 'rails-jquery-autocomplete'
 
 gem 'jquery-ui-rails'
 
+gem 'geocoder'
+
+gem 'gmaps4rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record

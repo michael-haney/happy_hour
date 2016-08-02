@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'explores/nearby'
+  get 'explores/lodo'
+  get 'explores/lohi'
+  get 'explores/caphill'
+  get 'explores/rino'
+  get 'explores/index'
   resources :explores
   root 'static_pages#home'
 
+  get 'index' => 'explores#index'
+
   get 'home' => 'static_pages#home'
+
+  get 'nearby' => 'explores#nearby'
 
   get 'static_pages/contact'
 
@@ -12,6 +22,18 @@ Rails.application.routes.draw do
   get 'static_pages/register'
 
   get 'listings/index'
+
+  get 'rino' => 'explores#rino'
+
+  get 'uptown' => 'explores#uptown'
+
+  get 'lohi' => 'explores#lohi'
+
+  get 'caphill' => 'explores#caphill'
+
+  get 'lodo' => 'explores#lodo'
+
+  get 'password_request' => 'static_pages#password_request'
 
   get 'login' => 'sessions#login'
   post 'login' => 'sessions#create'
